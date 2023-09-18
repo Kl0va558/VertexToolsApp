@@ -6,10 +6,14 @@ import kotlinx.serialization.json.Json
 import okhttp3.MediaType
 import retrofit2.Retrofit
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 interface Retro {
     @GET("products")
     suspend fun getProductsList(): List<Product>
+
+    @GET("products")
+    suspend fun getProductsByCategory(@Query("category") category:String): List<Product>
 
     companion object {
         private val retrofit = Retrofit.Builder()
