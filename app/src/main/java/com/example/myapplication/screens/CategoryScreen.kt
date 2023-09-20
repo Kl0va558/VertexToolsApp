@@ -16,19 +16,4 @@ fun CategoryScreen(
     onNavigateToFriends: () -> Unit,
     navController: NavController
 ) {
-    val coroutineScope = rememberCoroutineScope()
-    val products = remember {
-        mutableStateOf<List<Product>>(emptyList())
-    }
-    Button(
-        onClick = {
-            coroutineScope.launch {
-                val result = Retro.api.getProductsList()
-                products.value = result
-            }
-            navController.navigate("main")
-        }
-    ) {
-        Text(text = "Два")
-    }
 }

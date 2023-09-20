@@ -46,21 +46,4 @@ fun MainScreen(
     val products = remember {
         mutableStateOf<List<Product>>(emptyList())
     }
-    Column(
-        modifier = Modifier.fillMaxSize(),
-        verticalArrangement = Arrangement.Bottom,
-        horizontalAlignment = Alignment.End
-    ) {
-        FloatingActionButton(
-            onClick = {
-                coroutineScope.launch {
-                    val result = Retro.api.getProductsList()
-                    products.value = result
-                }
-                navController.navigate("category")
-            }
-        ) {
-            Text(text = "Раз")
-        }
-    }
 }
