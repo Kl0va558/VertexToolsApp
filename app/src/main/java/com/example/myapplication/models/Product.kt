@@ -1,4 +1,4 @@
-package com.example.myapplication.Models
+package com.example.myapplication.models
 
 import kotlinx.serialization.Serializable
 
@@ -10,5 +10,7 @@ data class Product(
     val description: String,
     val image: String,
     val weight: Int,
+    val article: String,
+    val nmid: String
 )
 
